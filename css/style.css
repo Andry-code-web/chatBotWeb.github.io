@@ -1,0 +1,318 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #00205b;
+}
+
+.logo {
+  width: 12%;
+}
+
+.logo img {
+  width: 100%;
+  z-index: 2;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  align-items: center;
+}
+
+.sociales {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.sociales div {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d7dafa;
+  color: black;
+}
+
+.menu-btn {
+  display: none; /* Oculta el botón en tamaños mayores a dispositivos móviles */
+}
+
+/* SLIDER */
+.section_cursos {
+  display: flex;
+}
+
+.contenido {
+  width: 100%;
+  border-radius: 10px;
+  margin: 2.5rem;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+}
+
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 1000px; /* Ajusta el ancho máximo según sea necesario */
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* CURSOS */
+
+.card {
+  width: 25%;
+  height: 30vh;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgb(121, 121, 121);
+}
+.cursos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.color_fondo {
+  width: 100%;
+  height: 15vh;
+  background-color: #00205b;
+  color: white;
+}
+
+.color_fondo p{
+  margin: 0;
+  padding: 10px;
+}
+
+.nombre_curso{
+  padding: 0px 10px 0px 10px;
+}
+
+/* .eventos {
+  width: 30%;
+} */
+
+.eventos {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Oculta la sección de eventos fuera del área visible por defecto */
+  height: 100vh;
+  background-color: #f4f4f4;
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+}
+
+.eventos.active {
+  right: 0; /* Muestra la sección de eventos al establecer la posición derecha en 0 */
+}
+
+.toggle-btn {
+  display: block;
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  border-radius: 30px 0px 0px 30px;
+  background-color: #00205b;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.eventos_proximos {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.evento_diario{
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  background-color: #f4f4f4;
+  padding: 0.5rem;
+  justify-content: space-evenly;
+}
+
+.evento_diario i{
+  font-size: 30px;
+}
+
+.infor{
+  font-size: 1rem;
+}
+
+.card {
+  width: 100%; /* Cambiado de 25% a 100% para dispositivos móviles */
+  /* Otros estilos... */
+}
+
+/* EVENTOS */
+.eventos {
+  width: 70%; /* Cambiado de 30% a 100% para dispositivos móviles */
+  /* Otros estilos... */
+}
+
+/* Consulta de medios para pantallas más grandes */
+@media screen and (min-width: 768px) {
+  /* Añadir estilos adicionales para pantallas más grandes si es necesario */
+  .card {
+    width: 25%;
+    /* Otros estilos... */
+  }
+
+  .eventos {
+    width: 30%;
+    /* Otros estilos... */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo img {
+    width: 7rem;
+  }
+
+  .navigation {
+    display: none; /* Oculta la navegación en tamaños de pantalla pequeños */
+    flex-direction: column; /* Apila los elementos en columnas */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: #00205b;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-size: 1rem;
+  }
+
+  .navigation.activate {
+    display: flex; /* Muestra la navegación cuando la clase "active" está presente */
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+  }
+
+  .navigation h4 {
+    font-size: 0.7rem;
+  }
+
+  .menu-btn {
+    display: block; /* Muestra el botón en tamaños de pantalla pequeños */
+    background-color: #00205b;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .eventos {
+    display: block; /* Oculta la sección de eventos en tamaños de pantalla pequeños */
+  }
+
+  .eventos h1 {
+    text-align: center;
+  }
+}
+
+#chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-messages {
+  height: 300px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+#user-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#send-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Añade estos estilos a tu archivo de estilo */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chatbot-btn {
+  width: 10rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#chat-container {
+  display: none;
+  /* Añade otros estilos según sea necesario para el contenedor del chatbot */
+}
+
+/* Añade estos estilos a tu archivo de estilo */
+.chatbot-container.expanded #chat-container {
+  width: 18rem;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001; /* Asegúrate de que el chatbot aparezca sobre el botón flotante */
+}
